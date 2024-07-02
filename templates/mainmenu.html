@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>2024 캡스톤 - 중심 팀</title>
+    <link type="text/css"  rel="stylesheet" href="/file/css/main.css">
+</head>
+<body>
+    <div class="connect">
+        <h1>밸런싱 봇과 연결되었습니다.</h1>
+    </div>
+
+    <script src="/file/js/main.js"></script>
+
+    <div class="title">
+        <h1>2024 캡스톤 - 밸런싱 봇</h1>
+        <hr>
+        <h3>중심팀 - <a href="https://github.com/seon0313/Capstone_Main">Github</a></h3>
+    </div>
+
+    <p style="text-align:center">*스마트폰을 세로모드로 설정해 주세요.*</p>
+
+
+    <div class="pidPanel">
+        <div class="pp">
+            <label>P</label> <p class="p"></p>
+        </div>
+        <div class="ii">
+            <label>I</label> <p class="i"></p>
+        </div>
+        <div class="dd">
+            <label>D</label> <p class="d"></p>
+        </div>
+    </div>
+    <details>
+        <summary>P.I.D 변경</summary>
+        <div>
+            <label>P</label>
+            <input id="pv" type="range" min="1" max="1000" value="50">
+            <label id="p">50</label>
+        </div>
+        <div>
+            <label>I</label>
+            <input id="iv" type="range" min="1" max="1000" value="50">
+            <label id="i">50</label>
+        </div>
+
+        <div>
+            <label>D</label>
+            <input id="dv" type="range" min="1" max="1000" value="50">
+            <label id="d">50</label>
+        </div>
+        <button>값 저장</button>
+        <script>
+            var ps = document.getElementById("pv");
+            var is = document.getElementById("iv");
+            var ds = document.getElementById("dv");
+            var p = document.getElementById("p");
+            var i = document.getElementById("i");
+            var d = document.getElementById("d");
+            p.innerHTML = ps.value;
+
+            ps.oninput = function() {
+                p.innerHTML = this.value;
+            }
+            i.innerHTML = is.value;
+            is.oninput = function() {
+                i.innerHTML = this.value;
+            }
+            d.innerHTML = ds.value;
+            ds.oninput = function() {
+                d.innerHTML = this.value;
+            }
+        </script>
+
+        <details>
+            <summary>P.I.D 리스트</summary>
+            <button onclick="reloadPIDs();">새로고침</button>
+            <div class="pid_list">
+
+            </div>
+        </details>
+
+    </details>
+</body>
+</html>
